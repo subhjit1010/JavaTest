@@ -1,0 +1,22 @@
+package com.java8.example.filter;
+
+import com.java8.example.common.Person;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class FilterExample2 {
+    public static void main(String[] args) {
+       List<Person> persons = Arrays.asList( new Person("mkyong", 30),
+               new Person("jack", 20),
+               new Person("lawrence", 40));
+
+       Person result1= persons.stream()
+               .filter(x->"jack".equals(x.getName()))
+               .findAny()
+               .orElse(null);
+        System.out.println(result1);
+
+    }
+}
